@@ -1,0 +1,53 @@
+<div class="product-details">
+<div class="add-to-cart">
+  <div class="col-12 d-grid text-center">
+    <a href="/addpro" type="button" ><button class="add-to-cart-btn"     type="submit"     ><i class="fa-solid fa-shop"></i> Add New product</button></a>
+
+    </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-6 d-flex justify-content-end" >
+  </div>
+
+
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">desce</th>
+      <th scope="col">img</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.title}}</td>
+      <td>{{this.desc}}</td>
+      <td><img src="{{this.img}}" class="small-img"></td>
+      <td>{{this.price}}</td>
+
+      <td>
+        <a href="/view/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="fa-solid fa-magnifying-glass"></i> Viwe</a>
+        <a href="/editpro/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="fa-solid fa-wrench"></i> Edit</a>
+        <a href="/delete/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="fa-solid fa-circle-xmark"></i> Delete</a>
+
+
+      </td>
+
+
+    </tr>
+
+    {{/each}}
+  </tbody>
+</table>

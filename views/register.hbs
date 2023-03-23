@@ -1,0 +1,82 @@
+
+<section class="h-100">
+  {{#if message }}
+      <h4 class="alert alert-danger mt-4 text-center">{{message}}</h4>
+    {{/if}}
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img id="img-responsive" src="/./img/registration-form-9.jpeg"/>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">registration form</h3>
+
+                <form action="/auth/register" method="POST">
+                <div class="row">
+                  <div class="col-md-15 mb-4">
+                    <div class="form-outline">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-15 mb-4">
+                    <div class="form-outline mb-4">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                 
+                <div class="form-outline mb-4">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password">
+                </div>
+
+                
+
+              
+
+                <div class="form-outline mb-4">
+                  <label for="passwordConfirm">Confirm Password</label>
+                  <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label for="adress">adress</label>
+                  <input type="text" class="form-control" id="password" name="adress">
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label for="phone">phone</label>
+                  <input type="text" class="form-control" id="phone" name="phone">
+                </div>
+
+                
+<div class="product-details">
+<div class="add-to-cart">
+  <div class="col-12 d-grid text-center">
+<div class="col-12 d-grid">
+                  <button type="submit" class="add-to-cart-btn">Register User</button>
+</div>
+</div>
+
+
+    </div>
+</div>
+                
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>

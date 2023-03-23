@@ -1,0 +1,73 @@
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="col-md-5 col-md-push-2">
+  <div id="product-main-img">
+    <div class="product-preview">
+      <img src="{{this.img}}" class="img-fluid rounded-3">
+    </div>
+  </div>
+</div>
+
+<div class="container rounded bg-white mt-5 mb-5">
+{{#each rows}}
+
+
+<div class="col-md-2 col-md-push-0">
+  <div id="product-main-img">
+    <div class="product-preview">
+      <img src="{{this.img}}" class="img-fluid rounded-3">
+    </div>
+  </div>
+</div>
+<form class="row g-3 needs-validation" method="POST" action="/editpro/{{this.id}}" novalidate> 
+ 
+ 
+ 
+
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" value="{{this.title}}" placeholder="Title"      name="p_title">
+  <label for="floatingInput">Title</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" value="{{this.desc}}"  placeholder="Desc"       name="p_desc">
+  <label for="floatingInput">Desc</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput"   value="{{this.img}}"     placeholder="Img"        name="p_img">
+  <label for="floatingInput">Img</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput"   value="{{this.price}}" placeholder="price"        name="p_price">
+  <label for="floatingInput">price</label>
+</div>
+</div>
+
+<div class="product-details">
+<div class="add-to-cart">
+  <div class="col-12 d-grid">
+    <button class="add-to-cart-btn"     type="submit"     >Update</button>
+    </div>
+</div>
+</div>
+
+{{/each}}
+
+</form>
+
+</div>

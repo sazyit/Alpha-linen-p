@@ -1,0 +1,128 @@
+<style>::-webkit-scrollbar {
+                                  width: 8px;
+                                }
+                                /* Track */
+                                ::-webkit-scrollbar-track {
+                                  background: #f1f1f1; 
+                                }
+                                 
+                                /* Handle */
+                                ::-webkit-scrollbar-thumb {
+                                  background: #888; 
+                                }
+                                
+                                
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #750a0aa9
+}
+
+.profile-button {
+    background: #ec0000a9;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #9c1b05a9
+}
+
+.profile-button:focus {
+    background: #9c1b05a9;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #9c1b05a9;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #9c1b05a9;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #9c1b05a9;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #9c1b05a9
+}
+</style>
+<body className='snippet-body'>
+                                <div class="container rounded bg-white mt-5 mb-5">
+
+{{#each rows}}
+<form class="row g-3 needs-validation" method="POST" action="/edit_user/{{this.id}}" novalidate> 
+ 
+ 
+ 
+<!--
+    <h4>{{this.name}}</h4>
+
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" value="{{this.adress}}" placeholder="adress"      name="u_adress">
+  <label for="floatingInput">adress</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" value="{{this.phone}}"  placeholder="phone"       name="u_phone">
+  <label for="floatingInput">phone</label>
+</div>
+</div>
+
+
+
+
+<div class="col-12 d-grid">
+    <button class="btn btn-primary"     type="submit"     >UPDATE</button>
+</div>
+ -->
+
+                                
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{this.name}}</span><span class="text-black-50">{{this.email}}</span><span> </span></div>
+        </div>
+        <div class="col-md-5 d-flex justify-content-between align-items-center">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">User Name</label><input type="text" class="form-control" value="{{this.name}}" placeholder="{{this.name}}" disabled></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="{{this.phone}}" value="{{this.phone}}" name="u_phone"></div>
+                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="{{this.adress}}" value="{{this.adress}}" name="u_adress"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" value="{{this.email}}" placeholder="Your personal mail" disabled></div>
+                </div>
+                
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save </button>
+
+            </div>
+        </div>
+       
+        </div>
+    </div>
+</div>
+</div>
+</div>
+                                
+	</body>
+
+
+{{/each}}
+
+</form>

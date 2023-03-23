@@ -1,0 +1,29 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">orderid</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">adress</th>
+      <th scope="col">phone</th>
+      <th scope="col">products_ids</th>
+      <th scope="col">cost</th>
+      <th scope="col">date</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.orderid}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.adress}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.products_ids}}</td>
+      <td>{{this.cost}}</td>
+      <td>{{this.date}}</td>
+
+      {{/each}}

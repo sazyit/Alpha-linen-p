@@ -1,0 +1,105 @@
+
+<section class="h-100 h-custom">
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="h5">Shopping Bag</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">#</th>
+              </tr>
+            </thead>
+            {{#each cart}}
+
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="d-flex align-items-center">
+                    <img src={{this.img}} class="img-fluid rounded-3"
+                      style="width: 120px;" alt="Book">
+                    <div class="flex-column ms-4">
+                      <p class="mb-2">{{this.title}}</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="mb-0" style="font-weight: 500;">{{this.quantity}}</p>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                    
+                     <p class="mb-0" style="font-weight: 500;">{{this.price}}</p>
+                    
+                    
+                  </div>
+                </td>
+                <td class="align-middle">
+
+                  
+               <a href="/view/{{this.id}}" type="button" class="btn btn-light btn-small"> <i class="fa-solid fa-magnifying-glass"></i></a>
+
+        <form method="post" action="/remove_cart">
+        
+         <input type="hidden" name="id" value="{{this.id}}">
+         <button type="submit" name="remove_btn" class="btn btn-light btn-small"><i class="fa-solid fa-circle-xmark"></i></button>
+       </form>                
+       </td>
+        </tr>
+              
+            </tbody>
+                            {{/each}}
+
+          </table>
+        </div>
+
+        <div class="card shadow-2-strong mb-5 mb-lg-0 " style="border-radius: 16px;">
+          <div class="card-body p-4 ">
+
+
+
+                    
+              
+
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
+                  <p class="mb-2">Total (tax included)</p>
+                  <h3 class="mb-2">جنيه{{total}}</h3>
+                </div>
+
+
+
+ {{#if cart}}
+
+ 
+            {{#if user}}
+              <form method="post" action="/pace_order">
+                 <input type="hidden" name="cost" value="{{total}}">
+                 <input type="hidden" name="name" value="{{user.name}}">
+                 <input type="hidden" name="email" value="{{user.email}}">
+                 <input type="hidden" name="adress" value="{{user.adress}}">
+                 <input type="hidden" name="phone" value="{{user.phone}}">
+                  <div class="d-flex justify-content-between">
+                     <input type="submit" class="primary-btn order-submit btn-block btn-lg" value="Checkout جنيه{{total}}">
+                  </div>
+              </form>
+              {{else}}
+              <a class="primary-btn order-submit btn-block btn-lg"  href="/login">Login to Checkout</a>
+            {{/if}} 
+     {{/if}}  
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

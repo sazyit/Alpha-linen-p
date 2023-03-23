@@ -1,0 +1,68 @@
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible  show  " role="alert">
+  <p class="text-center">{{alert}}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+{{/if}}
+
+<body className='snippet-body'>
+                                <div class="container rounded bg-white mt-5 mb-5">
+
+<form class="row g-3 needs-validation" method="POST" action="/addpro" novalidate> 
+ 
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="Title"      name="p_title">
+  <label for="floatingInput">Title</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="Desc"       name="p_desc">
+  <label for="floatingInput">Desc</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="Img"        name="p_img">
+  <label for="floatingInput">Img</label>
+</div>
+</div>
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="shop"        name="p_shop" value="{{user.name}}">
+  <label for="floatingInput">shop_name</label>
+</div>
+</div>
+
+
+<div class="col-6">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="price"        name="p_price">
+  <label for="floatingInput">price</label>
+</div>
+</div>
+
+<div class="product-details">
+<div class="add-to-cart">
+  <div class="col-12 d-grid text-center">
+<div class="col-12 d-grid">
+    <button class="add-to-cart-btn"     type="submit"     ><i class="fa-solid fa-circle-up"></i>ADD</button>
+</div>
+</div>
+
+
+    </div>
+</div>
+
+
+
+  </form>
+ </div>
+</div>
