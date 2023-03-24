@@ -130,7 +130,7 @@ router.post("/remove_cart", function (req, res) {
 //Checkout
 
 //sql connectin
-const dp = mysql.createConnection({
+const dp = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
