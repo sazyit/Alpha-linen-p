@@ -154,14 +154,21 @@ router.post("/pace_order", function (req, res) {
   var products_ids = "";
   var date = new Date();
   var cart = req.session.cart;
+  var pquantity = "";
 
   for (let i = 0; i < cart.length; i++) {
     products_ids = products_ids + "," + cart[i].id;
   }
 
+  for (let i = 0; i < cart.length; i++) {
+    pquantity = pquantity + "," + cart[i].quantity;
+  }
+
   var quer =
-    "INSERT INTO orders  (cost,name,email,adress,phone,products_ids,date) VALUES ?";
-  var values = [[cost, name, email, adress, phone, products_ids, date]];
+    "INSERT INTO orders  (cost,name,email,adress,phone,products_ids,date,pquantity) VALUES ?";
+  var values = [
+    [cost, name, email, adress, phone, products_ids, date, pquantity],
+  ];
   dp.query(quer, [values], (err, result) => {
     if (err) {
       console.log(err);
